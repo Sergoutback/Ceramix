@@ -5,39 +5,54 @@ using UnityEngine.UI;
 
 public class TailCalculator : MonoBehaviour
 {
-    [SerializeField] private GameObject BigSquare;
-
     public GameObject Tail;
 
-    private int[,] fillBigSquare;
+    //[SerializeField] private GameObject BigSquare;
+    //[SerializeField] private int width;
+    //[SerializeField] private int height; 
+
+    //private int[,] fillBigSquare;
 
     void Start()
     {
         FillSquare();
+
+        TailPosition();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
 
     private void FillSquare()
     {
-        fillBigSquare = new int [5, 5];
+        //fillBigSquare = new int [width, height];
+        //Tail.SetActive(true);
 
-        for (int w = 0; w < 5; ++w)
+        for (int h = 0; h < 5; ++h)
         {
-            for (int h = 0; h < 5; ++h)
+            for (int w = 0; w < 5; ++w)
             {
-                this.Tail = new GameObject();
+                //Tail.AddComponent<TailCalculator>();
+                TailCalculator tail = Tail.GetComponent<TailCalculator>();
+                //tail.transform.position = new Vector3(250, 40, 100);
+                //Tail.AddComponent<Transform>().Init();
+                //var tail = new GameObject();
 
-                Tail.transform.position = Vector3.right;
+                //Tail.transform.position = Vector3.MoveTowards(Tail.transform.position, Vector3(250, 40, 100), 1f);
+                //InstantiateTail();
 
-                Tail.transform.position = Vector3.up;
+                //tail.transform.position = Vector3.MoveTowards(Tail.transform.position, transform.position + Vector3.up, 1f);
 
-                Debug.Log("Tail.transform.position= "+ Tail.transform.position);
+                Debug.Log("newTail.transform.position= " + tail.transform.position);
             }
         }
+    }
+    //private void InstantiateTail()
+    //{
+    //    Tail = Instantiate(Tail, new Vector3(-240, -440, 0), Quaternion.identity);
+
+        
+    //}
+    private void TailPosition()
+    {
+        Transform tailPosition = Tail.GetComponent<Transform>();
     }
 }
