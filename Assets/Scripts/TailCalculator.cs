@@ -28,6 +28,10 @@ public class TailCalculator : MonoBehaviour
 
         for (int h = 0; h < 5; ++h)
         {
+            tailPosition.x = -340f;
+
+            tailPosition.y += 110f;
+
             for (int w = 0; w < 5; ++w)
             {
                 //Vector3 tailPosition = new Vector3();
@@ -42,11 +46,11 @@ public class TailCalculator : MonoBehaviour
 
                 //for (tailPosition.y = -450f; tailPosition.y < 50; ++tailPosition.y)
 
-                    tailPosition.y += 100f;
+                    //tailPosition.y += 100f;
 
                 //for (tailPosition.x = -250f; tailPosition.x < 250; ++tailPosition.x)
 
-                    tailPosition.x += 100f;
+                    tailPosition.x += 110f;
 
                 
 
