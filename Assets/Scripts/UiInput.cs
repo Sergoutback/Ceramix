@@ -19,8 +19,7 @@ public class UiInput : MonoBehaviour, IPointerClickHandler
 
     void Update()
     {
-        if(inputText.text != "Write value")
-            
+        if((!(inputText.text == "Write value")) || (inputText.text.Length == 1))
             inputText.text += Input.inputString;
     }
 
