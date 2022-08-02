@@ -21,26 +21,18 @@ public class TailCalculator : MonoBehaviour
 
     private void FillSquare()
     {
+
+        Vector3 tailPosition = new Vector3();
+
+        tailPosition = new Vector3(tail.transform.localPosition.x, tail.transform.localPosition.y, 0f);
+
         for (int h = 0; h < 5; ++h)
         {
             for (int w = 0; w < 5; ++w)
             {
-                Vector3 tailPosition = new Vector3();
+                //Vector3 tailPosition = new Vector3();
 
-                tailPosition = new Vector3(tailPosition.x, tailPosition.y, 0f);
-
-                if (tailPosition.y > -450f || tailPosition.y < 50f)
-
-                    tailPosition.y += 100f;
-                else
-                    tailPosition.y = -450f;
-
-
-                if (tailPosition.x > -250f || tailPosition.x < 250f)
-
-                    tailPosition.x += 100f;
-                else
-                    tailPosition.x = -250f;
+                //tailPosition = new Vector3(tail.transform.localPosition.x, tail.transform.localPosition.y, 0f);
 
                 GameObject newTail = Instantiate(tail, tailPosition, Quaternion.identity) as GameObject;
 
@@ -48,10 +40,36 @@ public class TailCalculator : MonoBehaviour
 
                 newTail.transform.localScale = new Vector3(1, 1, 1);
 
-                newTail.transform.position = tailPosition;
+                //for (tailPosition.y = -450f; tailPosition.y < 50; ++tailPosition.y)
+
+                    tailPosition.y += 100f;
+
+                //for (tailPosition.x = -250f; tailPosition.x < 250; ++tailPosition.x)
+
+                    tailPosition.x += 100f;
+
+                
+
+                newTail.transform.localPosition = tailPosition;
             }
         }
+
+
     }
+
+                //    if (tailPosition.y > -450f || tailPosition.y< 50f)
+
+                //    tailPosition.y += 100f;
+                //else
+                //    tailPosition.y = -450f;
+
+
+                //if (tailPosition.x > -250f || tailPosition.x< 250f)
+
+                //    tailPosition.x += 100f;
+                //else
+                //    tailPosition.x = -250f;
+
 
     //private void TailClone()
     //{
