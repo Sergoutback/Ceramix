@@ -21,7 +21,7 @@ namespace GeneralNamespace
         {
             Mesh mesh = tail.GetComponent<MeshFilter>().sharedMesh;
             area = AreaOfMesh(mesh);
-            Debug.Log("The area of the mesh is " + area + " square units.");
+            Debug.Log("One tail " + area + " square units.");
         }
 
         public float AreaOfTriangle(Vector3 p1, Vector3 p2, Vector3 p3)
@@ -61,7 +61,7 @@ namespace GeneralNamespace
         public void CalculateSquare()
         {
             square = area * FillSquareByTiles.tailCount;
-            Debug.Log("The area of the mesh is " + square + " square units.");
+            Debug.Log("Tails area " + square + " square units.");
         }
     }
 }

@@ -6,28 +6,68 @@ using UnityEngine.EventSystems;
 
 namespace GeneralNamespace
 {
-    public class UiInput : MonoBehaviour, IPointerClickHandler
+    public class UiInput : InputInstance
     {
-        [SerializeField] private Text inputText;
+        //[SerializeField] private GameObject inputSeam;
+
+        //[SerializeField] private GameObject inputCorner;
+
+        //[SerializeField] private GameObject inputOffset;
+
+        //[SerializeField] private Text inputSeamText;
+
+        //[SerializeField] private Text inputCornerText;
+
+        //[SerializeField] private Text inputOffsetText;
+
+
+        //[SerializeField] private Toggle toggleSeamText;
+
+        //[SerializeField] private Toggle toggleCornerText;
+
+        //[SerializeField] private Toggle toggleOffsetText;
 
 
 
-        void Start()
+        public void Start()
         {
-            inputText.text = ("Write value");
+            WriteValue();
         }
 
-
-
-        void Update()
+        public void Update()
         {
-            if ((!(inputText.text == "Write value")) || (Input.GetMouseButton(1)))
-                inputText.text += Input.inputString;
+            InputString();
+
+        }
+    }
+
+
+
+    public class InputInstance : MonoBehaviour, IPointerClickHandler
+    {
+        [SerializeField] private GameObject inputGO;
+
+        [SerializeField] private Text inputTextValue;
+
+        [SerializeField] private Toggle toggleText;
+
+        public void WriteValue()
+        {
+            inputTextValue.text = "Write value";
+
+            toggleText.isOn = false;
         }
 
-        private void DefaultZero()
+        public string InputString()
         {
-            inputText.text = ("0");
+            if ((!(inputTextValue.text == "Write value")) && (toggleText.isOn))
+                inputTextValue.text += Input.inputString;
+                return inputTextValue.text;
+        }
+
+        public void DefaultZero()
+        {
+            inputTextValue.text = ("0");
 
         }
 
@@ -39,6 +79,6 @@ namespace GeneralNamespace
                 DefaultZero();
         }
 
-
     }
+    
 }

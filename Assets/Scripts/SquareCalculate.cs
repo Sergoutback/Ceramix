@@ -22,15 +22,23 @@ namespace GeneralNamespace
         private static float totalSquare;
 
 
-        // Update is called once per frame
-        void Update()
+        void Start()
         {
-            squareText.text = Convert.ToString(totalSquare);
+            BigSquare();
         }
 
-        public void TotalSquare()
+            // Update is called once per frame
+            void Update()
+        {
+            squareText.text = Convert.ToString(totalSquare);
+            TotalSquare();
+        }
+
+        public float TotalSquare()
         {
             totalSquare = bigSquare - TailCalculator.square;
+
+            return totalSquare;
         }
 
         public void BigSquare()
