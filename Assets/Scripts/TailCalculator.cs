@@ -1,18 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using FillSquareNamespace;
+using GeneralNamespace;
 using System;
 
 public class TailCalculator : MonoBehaviour
 {
-    public float Square;
+    [SerializeField] private float square = new float();
+
+    private float area;
 
 
     void Start()
     {
         Mesh mesh = GetComponent<MeshFilter>().sharedMesh;
-        float area = AreaOfMesh(mesh);
+        area = AreaOfMesh(mesh);
         Debug.Log("The area of the mesh is " + area + " square units.");
     }
 
@@ -47,12 +49,12 @@ public class TailCalculator : MonoBehaviour
 
     void Update()
     {
-        
+        CalculateSquare();
     }
 
     public void CalculateSquare()
     {
-        //Square = ;
-        //FillSquareByTiles.
+        square = area * FillSquareByTiles.tailCount;
+        Debug.Log("The area of the mesh is " + square + " square units.");
     }
 }

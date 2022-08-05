@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4592158647793662790}
   - component: {fileID: 4858049329337968024}
   - component: {fileID: 5332868550160359176}
+  - component: {fileID: 6239068222732187915}
   m_Layer: 5
   m_Name: TailMesh
   m_TagString: Untagged
@@ -96,3 +97,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   width: 100
   height: 100
+--- !u!114 &6239068222732187915
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 615489150272926683}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 215f412cc646978429fd0f3fb83295b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  square: 0

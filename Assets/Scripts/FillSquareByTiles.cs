@@ -3,13 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace FillSquareNamespace
+namespace GeneralNamespace
 {
     public class FillSquareByTiles : MonoBehaviour
     {
         [SerializeField] private GameObject parent;
 
         [SerializeField] private GameObject tail;
+
+        public static float tailCount;
 
         //private Vector3 tailPosition;
 
@@ -36,6 +38,8 @@ namespace FillSquareNamespace
 
                 for (int w = 0; w < 5; ++w)
                 {
+                    TailCount();
+
                     //Vector3 tailPosition = new Vector3();
 
                     //tailPosition = new Vector3(tail.transform.localPosition.x, tail.transform.localPosition.y, 0f);
@@ -59,8 +63,11 @@ namespace FillSquareNamespace
                     newTail.transform.localPosition = tailPosition;
                 }
             }
+        }
 
-
+        public void TailCount()
+        {
+            tailCount++;
         }
 
         //    if (tailPosition.y > -450f || tailPosition.y< 50f)
