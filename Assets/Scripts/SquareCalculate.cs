@@ -1,27 +1,43 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using System;
 
 namespace GeneralNamespace
 {
-    public class TailCalculator : MonoBehaviour
+
+    public class SquareCalculate : MonoBehaviour
     {
-        public static float square;
+        public Text squareText;
 
-        //[SerializeField] private GameObject bigSquare;
+        [SerializeField] private GameObject goBigSquareMesh;
 
-        [SerializeField] private GameObject tail;
+        //[SerializeField] private GameObject goTailMesh;
 
-        private float area;
+        private static float bigSquare;
+        
+        //private static float tailsSquare;
+
+        private static float totalSquare;
 
 
-        void Start()
+        // Update is called once per frame
+        void Update()
         {
-            Mesh mesh = tail.GetComponent<MeshFilter>().sharedMesh;
-            area = AreaOfMesh(mesh);
-            Debug.Log("The area of the mesh is " + area + " square units.");
+            squareText.text = Convert.ToString(totalSquare);
+        }
+
+        public void TotalSquare()
+        {
+            totalSquare = bigSquare - TailCalculator.square;
+        }
+
+        public void BigSquare()
+        {
+            Mesh bigSquareMesh = goBigSquareMesh.GetComponent<MeshFilter>().sharedMesh;
+            bigSquare = AreaOfMesh(bigSquareMesh);
+            Debug.Log("bigSquare " + bigSquare + " square units.");
         }
 
         public float AreaOfTriangle(Vector3 p1, Vector3 p2, Vector3 p3)
@@ -46,22 +62,10 @@ namespace GeneralNamespace
                 Vector3 p1 = vertices[triangles[i + 0]];
                 Vector3 p2 = vertices[triangles[i + 1]];
                 Vector3 p3 = vertices[triangles[i + 2]];
-                area += AreaOfTriangle(p1, p2, p3);
+                bigSquare += AreaOfTriangle(p1, p2, p3);
             }
 
-            return area;
-        }
-
-
-        void Update()
-        {
-            CalculateSquare();
-        }
-
-        public void CalculateSquare()
-        {
-            square = area * FillSquareByTiles.tailCount;
-            Debug.Log("The area of the mesh is " + square + " square units.");
+            return bigSquare;
         }
     }
 }

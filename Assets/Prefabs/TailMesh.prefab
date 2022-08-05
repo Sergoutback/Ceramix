@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4592158647793662790}
   - component: {fileID: 4858049329337968024}
   - component: {fileID: 5332868550160359176}
-  - component: {fileID: 6239068222732187915}
+  - component: {fileID: 7290901373053572272}
   m_Layer: 5
   m_Name: TailMesh
   m_TagString: Untagged
@@ -97,7 +97,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   width: 100
   height: 100
---- !u!114 &6239068222732187915
+--- !u!114 &7290901373053572272
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -109,4 +109,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 215f412cc646978429fd0f3fb83295b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  squareText: {fileID: 0}
   square: 0
+  tail: {fileID: 615489150272926683}
