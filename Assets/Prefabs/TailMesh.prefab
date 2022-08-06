@@ -109,6 +109,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 215f412cc646978429fd0f3fb83295b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  squareText: {fileID: 0}
-  square: 0
   tail: {fileID: 615489150272926683}

@@ -398,7 +398,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1243688625}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -475,7 +475,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u041F\u043B\u043E\u0449\u0430\u0434\u044C, \u043C \u043A\u0432"
+  m_Text: Area, m sq
 --- !u!222 &438377792
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -679,7 +679,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1744978964994444865, guid: 3dc6f64f46345774c870551d691108d1, type: 3}
       propertyPath: m_Text
-      value: "\u0421\u043C\u0435\u0449\u0435\u043D\u0438\u0435"
+      value: Offset
       objectReference: {fileID: 0}
     - target: {fileID: 1744978966243122018, guid: 3dc6f64f46345774c870551d691108d1, type: 3}
       propertyPath: m_SizeDelta.x
@@ -688,6 +688,10 @@ PrefabInstance:
     - target: {fileID: 1744978966243122018, guid: 3dc6f64f46345774c870551d691108d1, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 257.50003
+      objectReference: {fileID: 0}
+    - target: {fileID: 1744978966243122019, guid: 3dc6f64f46345774c870551d691108d1, type: 3}
+      propertyPath: m_Text
+      value: mm
       objectReference: {fileID: 0}
     - target: {fileID: 1744978966291761544, guid: 3dc6f64f46345774c870551d691108d1, type: 3}
       propertyPath: m_TagString
@@ -806,7 +810,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5227965268706332343, guid: 3825cf97ae8f09f4fa121fe942322b5b, type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5227965268706332343, guid: 3825cf97ae8f09f4fa121fe942322b5b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1426,8 +1430,8 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 978940381}
   - {fileID: 434439162}
+  - {fileID: 978940381}
   m_Father: {fileID: 1055474524}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1502,8 +1506,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1744978964994444865, guid: 3dc6f64f46345774c870551d691108d1, type: 3}
       propertyPath: m_Text
-      value: "\u0423\u0433\u043E\u043B \u043F\u043B\u0438\u0442\u043E\u043A \u0432
-        \u043E\u0431\u043B\u0430\u0441\u0442\u0438"
+      value: Angle
       objectReference: {fileID: 0}
     - target: {fileID: 1744978966243122018, guid: 3dc6f64f46345774c870551d691108d1, type: 3}
       propertyPath: m_SizeDelta.x
@@ -1515,7 +1518,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1744978966243122019, guid: 3dc6f64f46345774c870551d691108d1, type: 3}
       propertyPath: m_Text
-      value: "\u0413\u0440"
+      value: deg
       objectReference: {fileID: 0}
     - target: {fileID: 1744978966291761544, guid: 3dc6f64f46345774c870551d691108d1, type: 3}
       propertyPath: m_TagString
@@ -1773,6 +1776,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1055474524}
     m_Modifications:
+    - target: {fileID: 1744978964994444865, guid: 3dc6f64f46345774c870551d691108d1, type: 3}
+      propertyPath: m_Text
+      value: Seam
+      objectReference: {fileID: 0}
     - target: {fileID: 1744978966243122018, guid: 3dc6f64f46345774c870551d691108d1, type: 3}
       propertyPath: m_SizeDelta.x
       value: -174.99998
@@ -1780,6 +1787,10 @@ PrefabInstance:
     - target: {fileID: 1744978966243122018, guid: 3dc6f64f46345774c870551d691108d1, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 257.50003
+      objectReference: {fileID: 0}
+    - target: {fileID: 1744978966243122019, guid: 3dc6f64f46345774c870551d691108d1, type: 3}
+      propertyPath: m_Text
+      value: mm
       objectReference: {fileID: 0}
     - target: {fileID: 1744978966291761544, guid: 3dc6f64f46345774c870551d691108d1, type: 3}
       propertyPath: m_TagString
