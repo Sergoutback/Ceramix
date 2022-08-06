@@ -6,26 +6,13 @@ using UnityEngine.EventSystems;
 
 namespace GeneralNamespace
 {
-    public class UiInput : InputInstance
+    public class UiInput : MonoBehaviour, IPointerClickHandler
     {
-        //[SerializeField] private GameObject inputSeam;
+        [SerializeField] private GameObject inputGO;
 
-        //[SerializeField] private GameObject inputCorner;
+        [SerializeField] private Text inputTextValue;
 
-        //[SerializeField] private GameObject inputOffset;
-
-        //[SerializeField] private Text inputSeamText;
-
-        //[SerializeField] private Text inputCornerText;
-
-        //[SerializeField] private Text inputOffsetText;
-
-
-        //[SerializeField] private Toggle toggleSeamText;
-
-        //[SerializeField] private Toggle toggleCornerText;
-
-        //[SerializeField] private Toggle toggleOffsetText;
+        [SerializeField] private Toggle toggleText;
 
 
 
@@ -37,19 +24,9 @@ namespace GeneralNamespace
         public void Update()
         {
             InputString();
-
+            BackGroung();
         }
-    }
 
-
-
-    public class InputInstance : MonoBehaviour, IPointerClickHandler
-    {
-        [SerializeField] private GameObject inputGO;
-
-        [SerializeField] private Text inputTextValue;
-
-        [SerializeField] private Toggle toggleText;
 
         public void WriteValue()
         {
@@ -62,13 +39,21 @@ namespace GeneralNamespace
         {
             if ((!(inputTextValue.text == "Write value")) && (toggleText.isOn))
                 inputTextValue.text += Input.inputString;
-                return inputTextValue.text;
+            return inputTextValue.text;
         }
 
         public void DefaultZero()
         {
-            inputTextValue.text = ("0");
+            inputTextValue.text = "0";
 
+        }
+
+        public void BackGroung()
+        {
+            if (!toggleText.isOn)
+                inputGO.GetComponent<Image>().color = new Color(255 / 255.0f, 0 / 255.0f, 0 / 255.0f);
+            else
+                inputGO.GetComponent<Image>().color = new Color(0 / 255.0f, 255 / 255.0f, 0 / 255.0f);
         }
 
 
@@ -78,7 +63,5 @@ namespace GeneralNamespace
 
                 DefaultZero();
         }
-
     }
-    
 }
