@@ -30,14 +30,14 @@ namespace GeneralNamespace
 
         public void WriteValue()
         {
-            inputTextValue.text = "Write value";
+            inputTextValue.text = "88888";
 
             toggleText.isOn = false;
         }
 
         public string InputString()
         {
-            if ((!(inputTextValue.text == "Write value")) && (toggleText.isOn))
+            if ((!(inputTextValue.text == "88888")) && (toggleText.isOn))
 
                 if ((inputTextValue.text == "0") && Input.anyKeyDown)
                 {
