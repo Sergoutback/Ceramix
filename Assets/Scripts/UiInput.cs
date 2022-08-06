@@ -38,7 +38,18 @@ namespace GeneralNamespace
         public string InputString()
         {
             if ((!(inputTextValue.text == "Write value")) && (toggleText.isOn))
-                inputTextValue.text += Input.inputString;
+
+                if ((inputTextValue.text == "0") && Input.anyKeyDown)
+                {
+                    inputTextValue.text = "";
+
+                    inputTextValue.text += Input.inputString;
+                }
+
+                else
+
+                    inputTextValue.text += Input.inputString;
+
             return inputTextValue.text;
         }
 
