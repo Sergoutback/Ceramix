@@ -12,9 +12,15 @@ namespace GeneralNamespace
 
         public static float square;
 
-        //[SerializeField] private GameObject bigSquare;
+        [SerializeField] Rigidbody tailRigidbody;
+
+        //[SerializeField] ContactFilter2D contactFilter;
 
         [SerializeField] private GameObject tail;
+
+        private RaycastHit[] hits = new RaycastHit[25];
+
+        private Ray ray;
 
         private float area;
 
@@ -72,12 +78,31 @@ namespace GeneralNamespace
         {
             //Vector3 direction = new Vector3(0f, 0f, 50f);
 
-            RaycastHit[] hit = Physics.RaycastAll(transform.position, transform.forward, 50f, 2);
+            hits = Physics.RaycastAll(tail.transform.position, tail.transform.forward, 50f, 6);
 
-            if (hit.Length > 0)
+            if (hits.Length > 0)
+            {
+                Debug.Log("RaycastHit[] hit" + hits.Length);
+            }
 
-                Debug.Log("RaycastHit[] hit" + hit.Length);
+            //var collisionCount = tailRigidbody.collisionDetectionMode(hit);
+
+            for (int i = 0; i < hits.Length; i++)
+            {
+                RaycastHit hit = hits[i]; 
+                
+                Renderer rend = hit.transform.GetComponent<Renderer>();
+
+                if (rend)
+                {
+                    // Change the material of all hit colliders
+                    // to use a transparent shader.
+                    rend.material.shader = Shader.Find("Transparent/Diffuse");
+                    Color tempColor = rend.material.color;
+                    tempColor.a = 0.3F;
+                    rend.material.color = tempColor;
+                }
+            }
         }
-
     }
 }
