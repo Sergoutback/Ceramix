@@ -808,17 +808,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: BigTailMesh
       objectReference: {fileID: 0}
+    - target: {fileID: 615489150272926683, guid: 3825cf97ae8f09f4fa121fe942322b5b, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 5227965268706332343, guid: 3825cf97ae8f09f4fa121fe942322b5b, type: 3}
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5227965268706332343, guid: 3825cf97ae8f09f4fa121fe942322b5b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -300
+      value: -250
       objectReference: {fileID: 0}
     - target: {fileID: 5227965268706332343, guid: 3825cf97ae8f09f4fa121fe942322b5b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -300
+      value: -250
       objectReference: {fileID: 0}
     - target: {fileID: 5227965268706332343, guid: 3825cf97ae8f09f4fa121fe942322b5b, type: 3}
       propertyPath: m_LocalPosition.z
@@ -854,11 +858,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5332868550160359176, guid: 3825cf97ae8f09f4fa121fe942322b5b, type: 3}
       propertyPath: width
-      value: 600
+      value: 520
       objectReference: {fileID: 0}
     - target: {fileID: 5332868550160359176, guid: 3825cf97ae8f09f4fa121fe942322b5b, type: 3}
       propertyPath: height
-      value: 600
+      value: 520
       objectReference: {fileID: 0}
     - target: {fileID: 7290901373053572272, guid: 3825cf97ae8f09f4fa121fe942322b5b, type: 3}
       propertyPath: m_Enabled

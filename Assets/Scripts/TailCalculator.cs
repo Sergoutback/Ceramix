@@ -8,6 +8,8 @@ namespace GeneralNamespace
 {
     public class TailCalculator : MonoBehaviour
     {
+        //public RaycastHit raycast;
+
         public static float square;
 
         //[SerializeField] private GameObject bigSquare;
@@ -56,6 +58,8 @@ namespace GeneralNamespace
         void Update()
         {
             CalculateSquare();
+
+            RaycastSquare();
         }
 
         public void CalculateSquare()
@@ -63,5 +67,15 @@ namespace GeneralNamespace
             square = area * FillSquareByTiles.tailCount;
             Debug.Log("Tails area " + square + " square units.");
         }
+
+        public void RaycastSquare()
+        {
+            //Vector3 direction = new Vector3(0f, 0f, 50f);
+
+            RaycastHit[] hit = Physics.RaycastAll(transform.position, transform.forward, 50f, 2);
+
+            Debug.Log("RaycastHit[] hit"+ hit);
+        }
+
     }
 }
