@@ -74,7 +74,9 @@ namespace GeneralNamespace
 
             RaycastHit[] hit = Physics.RaycastAll(transform.position, transform.forward, 50f, 2);
 
-            Debug.Log("RaycastHit[] hit"+ hit);
+            if (hit.Length > 0)
+
+                Debug.Log("RaycastHit[] hit" + hit.Length);
         }
 
     }

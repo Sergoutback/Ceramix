@@ -51,7 +51,7 @@ namespace GeneralNamespace
         }
         private void ParentRotation()
         {
-            parent.transform.rotation = new Quaternion(0f, 0f, cornerFloat, 1f);
+            parent.transform.rotation = Quaternion.Euler(0f, 0f, -cornerFloat);
             
         }
 
