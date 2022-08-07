@@ -20,11 +20,15 @@ namespace GeneralNamespace
 
         [SerializeField] private Text offset;
 
+        private GameObject newTail;
+
         private float seamFloat;
 
         private float cornerFloat;
 
         private float offsetFloat;
+
+        private Vector3 tailPosition;
 
         private Quaternion parentRotation;
 
@@ -48,6 +52,8 @@ namespace GeneralNamespace
             offsetFloat = (float)Convert.ToDouble(offset.text);
 
             ParentRotation();
+
+            //TailPositionX();
         }
         private void ParentRotation()
         {
@@ -55,17 +61,36 @@ namespace GeneralNamespace
             
         }
 
+        private void TailPositionX()
+        {
+            Debug.Log("offsetFloat" + offsetFloat);
+
+            for (int h = 0; h < 5; ++h)
+            {
+                for (int w = 0; w < 5; ++w)
+                {
+                    Destroy(newTail);
+                }
+            }
+
+            tailPosition.x += 110f + offsetFloat;
+
+            Debug.Log("tailPosition.x" + tailPosition.x);
+
+            FillSquare();
+        }
+
 
         private void FillSquare()
         {
 
-            Vector3 tailPosition = new Vector3();
+            tailPosition = new Vector3();
 
             tailPosition = new Vector3(tail.transform.localPosition.x, tail.transform.localPosition.y, 0f);
 
             for (int h = 0; h < 5; ++h)
             {
-                tailPosition.x = -340f + offsetFloat;
+                tailPosition.x = -340f;
 
                 tailPosition.y += 110f;
 
@@ -73,13 +98,13 @@ namespace GeneralNamespace
                 {
                     TailCount();
 
-                    GameObject newTail = Instantiate(tail, tailPosition, Quaternion.identity) as GameObject;
+                    newTail = Instantiate(tail, tailPosition, Quaternion.identity) as GameObject;
 
                     newTail.transform.SetParent(parent.transform, false);
 
                     newTail.transform.localScale = new Vector3(1, 1, 1);
 
-                    tailPosition.x += 110f;
+                    tailPosition.x += 110f + offsetFloat;
 
                     newTail.transform.localPosition = tailPosition;
                 }
