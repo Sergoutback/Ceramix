@@ -112,21 +112,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tailRigidbody: {fileID: 5791665880674572885}
-  contactFilter:
-    useTriggers: 0
-    useLayerMask: 0
-    useDepth: 0
-    useOutsideDepth: 0
-    useNormalAngle: 0
-    useOutsideNormalAngle: 0
-    layerMask:
-      serializedVersion: 2
-      m_Bits: 0
-    minDepth: 0
-    maxDepth: 0
-    minNormalAngle: 0
-    maxNormalAngle: 0
   tail: {fileID: 615489150272926683}
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 64
 --- !u!65 &5563130824973006902
 BoxCollider:
   m_ObjectHideFlags: 0

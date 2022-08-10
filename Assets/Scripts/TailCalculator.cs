@@ -18,11 +18,25 @@ namespace GeneralNamespace
 
         [SerializeField] private GameObject tail;
 
-        private RaycastHit[] hits = new RaycastHit[25];
+        [SerializeField] private GameObject BigSquare;
+
+        [SerializeField] private LayerMask layerMask;
+
+        private RaycastHit raycastHit;
+
+        private bool hit;
+
+        private int hitCount;
+
+        private int [] hits;
 
         private Ray ray;
 
         private float area;
+
+        private float areaOfArray;
+
+        private int [,] squareArray = new int[5, 5];
 
 
         void Start()
@@ -74,35 +88,67 @@ namespace GeneralNamespace
             //Debug.Log("Tails area " + square + " square units.");
         }
 
-        public void RaycastSquare()
+        public int RaycastSquare()
         {
-            //Vector3 direction = new Vector3(0f, 0f, 50f);
+            // получаем маску, которая затрагивает только слой Player
+            int layerMaskOnlyPlayer = 1 << 6;
 
-            hits = Physics.RaycastAll(tail.transform.position, tail.transform.forward, 50f, 6);
+            Debug.Log("layerMaskOnlyPlayer " + layerMaskOnlyPlayer);
+            // получаем маску, которая затрагивает все слои, кроме слоя Player
+            //int layerMaskWithoutPlayer = ~layerMaskOnlyPlayer;
 
-            if (hits.Length > 0)
+           int i = 0;
+
+            hitCount = 0;
+
+            hits = new int[100];
+
+            hit = Physics.Raycast(tail.transform.position, tail.transform.forward, 1000f, layerMaskOnlyPlayer);
+
+            Debug.DrawRay(tail.transform.position, tail.transform.forward, Color.red, 1000f);
+            
+            for (hitCount = 0; hitCount < hits.Length; hitCount++)
             {
-                Debug.Log("RaycastHit[] hit" + hits.Length);
+                if (hit)
+                {
+                    hits[i] = hitCount;
+
+                    Debug.Log("Попал в " + hit);
+                }
+
+                else
+                {
+                    Debug.Log("Не попал ");
+                }
             }
+
+            Debug.Log("hitCount== " + hitCount);
+
+            return hitCount;
+
+            //if (hits.Length > 0)
+            //{
+            //    Debug.Log("RaycastHit[] hit" + hits.Length);
+            //}
 
             //var collisionCount = tailRigidbody.collisionDetectionMode(hit);
 
-            for (int i = 0; i < hits.Length; i++)
-            {
-                RaycastHit hit = hits[i]; 
-                
-                Renderer rend = hit.transform.GetComponent<Renderer>();
+            //for (int i = 0; i < hits.Length; i++)
+            //{
+            //    //RaycastHit hit = hits[i]; 
 
-                if (rend)
-                {
-                    // Change the material of all hit colliders
-                    // to use a transparent shader.
-                    rend.material.shader = Shader.Find("Transparent/Diffuse");
-                    Color tempColor = rend.material.color;
-                    tempColor.a = 0.3F;
-                    rend.material.color = tempColor;
-                }
-            }
+            //    Renderer rend = hit.transform.GetComponent<Renderer>();
+
+            //    if (rend)
+            //    {
+            //        // Change the material of all hit colliders
+            //        // to use a transparent shader.
+            //        rend.material.shader = Shader.Find("Transparent/Diffuse");
+            //        Color tempColor = rend.material.color;
+            //        tempColor.a = 0.3F;
+            //        rend.material.color = tempColor;
+            //    }
+            //}
         }
     }
 }
